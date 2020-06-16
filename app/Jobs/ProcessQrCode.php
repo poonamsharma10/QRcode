@@ -40,6 +40,9 @@ class ProcessQrCode implements ShouldQueue
      */
     public function handle()
     {
-        QrCode::color(0,0,0)->backgroundColor(255, 255, 255)->format('svg')->generate($this->url,$this->imgUrl);
+        list($a, $b,$c)=sscanf($this->color, "#%02x%02x%02x");
+        list($d, $e, $f) = sscanf($this->backgroundcolor, "#%02x%02x%02x");
+      
+        QrCode::color($a,  $b, $c)->backgroundColor($d, $e, $f)->format('svg')->generate($this->url,$this->imgUrl);
     }
 }

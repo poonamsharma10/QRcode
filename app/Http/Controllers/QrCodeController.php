@@ -23,16 +23,16 @@ class QrCodeController extends Controller
                 // foreach ($content as $value){
                 //     $name="new{$value}"; 
                 //     $url= "value{$value}";
-                //     $color='0, 0, 0';
-                //     $backgroundcolor='255, 255, 255';
+                //     $color='#000000';
+                //     $backgroundcolor='#ffffff';
                 //     ProcessQrCode::dispatch($name, $url,$color,$backgroundcolor);
                 // }
   
 
     $name='new 222'; 
     $url= 'https://bitly.com/pages/why-bitly/bitly-101';
-    $color='0, 0, 0';
-    $backgroundcolor='255, 255, 255';
+    $color='#000000';
+    $backgroundcolor='#ffffff';
 
     
     ProcessQrCode::dispatch($name, $url,$color,$backgroundcolor);
