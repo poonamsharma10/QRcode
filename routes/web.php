@@ -14,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'QrCodeController@index');
+Route::get('/chart/{slug}','QrCodeController@chart')->name('chart');;
