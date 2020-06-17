@@ -87,7 +87,7 @@
                     <input type="submit" class="btn btn-primary" name="Week" value="week" />
                     <input type="submit" class="btn btn-primary" name="Month" value="month" />
                     <input type="submit" class="btn btn-primary" name="Year" value="year" />
-                    <div class="panel-heading"><b>Charts</b></div>
+                  
                     <div class="panel-body">
                         <canvas id="canvas" height="280" width="600"></canvas>
                     </div>
@@ -97,14 +97,14 @@
         </div>
 
         <script>
-        const today = new Date();
+        const today = moment();
         // Today
-        const nowHours = new Date(today).getHours();
-        const Hours = Array(nowHours).fill().map((e, i) => i);
+        const nowHours = today.format('HH');
+        const Hours = Array(Number(nowHours)).fill().map((e, i) => i);
         // Last Week
-        const Weekdays = Array(7).fill().map((e, i) => moment().subtract(i, 'days').format('dddd'))
+        const Weekdays = Array(7).fill().map((e, i) => today.subtract(i, 'days').format('dddd'))
         //  this month
-        const Monthdays = Array(Number(moment().endOf('month').format("DD"))).fill().fill().map((e, i) => (i + 1)
+        const Monthdays = Array(Number(today.endOf('month').format("DD"))).fill().map((e, i) => (i + 1)
             .toString())
         const Months = moment.months()
 

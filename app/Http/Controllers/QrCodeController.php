@@ -47,24 +47,23 @@ class QrCodeController extends Controller
   
         Log::info($slug);
         $today = Carbon::now();
-        if($slug==='day'){
-            $result = Qrcode::whereDate('created_at', Carbon::today())->get();
-        }
-        if($slug==='week'){
-            $result = Qrcode::whereDate('created_at','>', Carbon::now()->subDays(7))->get();
-         
-        }
-        if($slug==='month'){
-            $dateToday=Carbon::now()->format('dd');
-            $result = Qrcode::whereDate('created_at','>', Carbon::now()->subDays($dateToday))->get();
-         
-        }
-        if($slug==='year'){
-            $result = Qrcode::whereDate('created_at','>', Carbon::now()->startOfYear())->get();
-         
-        }
-        
+        switch ($slug) {
+            case 'day':
+                $result = Qrcode::whereDate('created_at', Carbon::today())->get();
+                break;
+            case 'week':
+                $result = Qrcode::whereDate('created_at','>', Carbon::now()->subDays(7))->get();
+                break;
+            case 'month':
+                $dateToday=Carbon::now()->format('dd');
+                $result = Qrcode::whereDate('created_at','>', Carbon::now()->subDays($dateToday))->get();
+                break;
+            case 'year':
+                $result = Qrcode::whereDate('created_at','>', Carbon::now()->startOfYear())->get();
+                break;
 
+            default:
+        }
         return response()->json($result);
         return view('welcome', [
             'data' => json($result)
