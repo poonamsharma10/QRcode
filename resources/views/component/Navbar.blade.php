@@ -5,26 +5,27 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav w-75 m-auto d-flex justify-content-around">
-    <li class="nav-item ">
-        <a class="nav-link" href="/qrcode">Qrcode </a>
+
+      <li class= "{{Str::startsWith(Route::currentRouteName(), 'line') ? 'active' : '' }} nav-item" >
+        <a class="nav-link"  href="/line">Line</a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="/line">Line <span class="sr-only">(current)</span></a>
+      <li class="{{Str::startsWith(Route::currentRouteName(), 'bar') ? 'active' : '' }} nav-item" >
+        <a class="nav-link" href="/bar">Bar</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Bar</a>
-      </li>
-      <li class="nav-item">
+      <li class="{{Str::startsWith(Route::currentRouteName(), '') ? 'active' : '' }} nav-item" >
         <a class="nav-link" href="#">Pie</a>
       </li>
-      <li class="nav-item">
+      <li class="{{Str::startsWith(Route::currentRouteName(), '') ? 'active' : '' }} nav-item" >
         <a class="nav-link" href="#">Trend</a>
       </li>
-      <li class="nav-item">
+      <li class="{{Str::startsWith(Route::currentRouteName(), '') ? 'active' : '' }} nav-item" >
         <a class="nav-link" href="#">Bar-total</a>
       </li>
-      <li class="nav-item">
+      <li class="{{Str::startsWith(Route::currentRouteName(), '') ? 'active' : '' }} nav-item" >
         <a class="nav-link" href="#">Bar-auto</a>
+      </li>
+      <li class="{{Str::startsWith(Route::currentRouteName(), 'qrcode') ? 'active' : '' }} nav-item" >
+        <a class="nav-link" href="/qrcode">Qrcode </a>
       </li>
     </ul>
   </div>

@@ -13,11 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/qrcode', 'QrCodeController@index');
+Route::get('/qrcode', 'QrCodeController@index')->name('qrcode');
 Route::get('/chart/{slug}','QrCodeController@chart')->name('chart');
-Route::get('/line', function () {
-    return view('component.Line');
-});
+
 Route::get('/', function () {
     return view('component.Home');
 });
+Route::get('/line', function () {
+    return view('component.Line');
+})->name('line');
+Route::get('/bar', function () {
+    return view('component.Bar');
+})->name('bar');
+
