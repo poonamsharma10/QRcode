@@ -38,7 +38,7 @@ class QrCodeController extends Controller
 
     
     ProcessQrCode::dispatch($name, $url,$color,$backgroundcolor);
-        return view('welcome');
+        return view('component.Qrcode');
     
     }
 

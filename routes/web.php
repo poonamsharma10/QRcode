@@ -13,5 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'QrCodeController@index');
-Route::get('/chart/{slug}','QrCodeController@chart')->name('chart');;
+Route::get('/qrcode', 'QrCodeController@index');
+Route::get('/chart/{slug}','QrCodeController@chart')->name('chart');
+Route::get('/line', function () {
+    return view('component.Line');
+});
+Route::get('/', function () {
+    return view('component.Home');
+});
