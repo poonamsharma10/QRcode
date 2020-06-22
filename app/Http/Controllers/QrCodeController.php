@@ -44,7 +44,7 @@ class QrCodeController extends Controller
 
 
     public function chart($slug){
-        $today = Carbon::now();
+        $today = Carbon::now(); 
         switch ($slug) {
             case 'day':
                 $result = Qrcode::whereDate('created_at', Carbon::today())->get();
@@ -59,7 +59,10 @@ class QrCodeController extends Controller
             case 'year':
                 $result = Qrcode::whereDate('created_at','>', Carbon::now()->startOfYear())->get();
                 break;
-
+            case 'hour':
+                Log::info( Carbon::now()->subHour());
+                $result = Qrcode::where('created_at','>=', Carbon::now()->subHour())->get();
+                break;
             default:
         }
         return response()->json($result);

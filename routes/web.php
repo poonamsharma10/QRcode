@@ -28,6 +28,10 @@ Route::get('/bar', function () {
 Route::get('/pie', function () {
     return view('component.Pie');
 })->name('pie');
+Route::get('/auto-bar', function () {
+    return view('component.AutoBar');
+})->name('Auto-Bar');
+
 Route::get('/trend', function () {
     return view('component.Trend');
 })->name('trend');

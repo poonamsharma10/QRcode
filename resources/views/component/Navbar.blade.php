@@ -22,7 +22,7 @@
         <a class="nav-link" href="#">Bar-total</a>
       </li>
       <li class="{{Str::startsWith(Route::currentRouteName(), '') ? 'active' : '' }} nav-item" >
-        <a class="nav-link" href="#">Bar-auto</a>
+        <a class="nav-link" href="auto-bar">Bar-auto</a>
       </li>
       <li class="{{Str::startsWith(Route::currentRouteName(), 'qrcode') ? 'active' : '' }} nav-item" >
         <a class="nav-link" href="/qrcode">Qrcode </a>
