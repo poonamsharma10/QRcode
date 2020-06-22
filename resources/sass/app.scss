@@ -6,3 +6,26 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+html,
+body {
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
+}
+
+.arrow{
+    height: 3rem;
+
+}
+.UP{
+transform: rotate(90deg);
+}
+.DOWN{
+transform: rotate(-90deg);
+}
+.RIGHT{
+transform: rotate(180deg);
+}

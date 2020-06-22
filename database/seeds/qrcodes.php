@@ -16,7 +16,7 @@ class qrcodes extends Seeder
     for ($i = 1; $i < 20; $i++) {
        Qrcode::insert([
             'link_id' =>$i,
-            'created_at'=>$faker->dateTimeBetween($startDate = '-7 days', $endDate = 'now', $timezone = null) 
+            'created_at'=>$faker->dateTimeBetween($startDate = '-3 days', $endDate = 'now', $timezone = null) 
             // 'created_at'=>$faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now', $timezone = null)
         ]);
     }

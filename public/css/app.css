@@ -10928,3 +10928,19 @@ a.text-dark:focus {
   }
 }
 
+.arrow {
+  height: 3rem;
+}
+
+.UP {
+  transform: rotate(90deg);
+}
+
+.DOWN {
+  transform: rotate(-90deg);
+}
+
+.RIGHT {
+  transform: rotate(180deg);
+}
+

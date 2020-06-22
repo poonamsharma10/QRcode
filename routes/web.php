@@ -25,4 +25,13 @@ Route::get('/line', function () {
 Route::get('/bar', function () {
     return view('component.Bar');
 })->name('bar');
+Route::get('/pie', function () {
+    return view('component.Pie');
+})->name('pie');
+Route::get('/trend', function () {
+    return view('component.Trend');
+})->name('trend');
+Route::get('/compare/{firstdate}/{seconddate}', 'QrCodeController@comparison')->name('date-comparision');
+
+
 

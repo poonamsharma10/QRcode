@@ -44,8 +44,6 @@ class QrCodeController extends Controller
 
 
     public function chart($slug){
-  
-        Log::info($slug);
         $today = Carbon::now();
         switch ($slug) {
             case 'day':
@@ -70,7 +68,20 @@ class QrCodeController extends Controller
         ]);
   
     }
-    
 
+    public function comparison($firstdate,$seconddate){
+        Log::info($firstdate);
+        Log::info($seconddate);
+        $today = Carbon::now();
+        $firstResult = Qrcode::whereDate('created_at','>', $firstdate)->get();
+        $secondResult = Qrcode::where('created_at', '<=', $firstdate)->where('created_at', '>=', $seconddate)->get();
+    //    $secondResult = Qrcode::whereBetween('created_at', [$today , $firstdate])->get();
+        $result=['first'=>$firstResult,
+        'second'=>$secondResult];
+        return response()->json($result);
+        return view('component.Trend', [
+            'data' => json($result)
+        ]);
   
+    }
 }

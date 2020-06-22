@@ -12,11 +12,11 @@
       <li class="{{Str::startsWith(Route::currentRouteName(), 'bar') ? 'active' : '' }} nav-item" >
         <a class="nav-link" href="/bar">Bar</a>
       </li>
-      <li class="{{Str::startsWith(Route::currentRouteName(), '') ? 'active' : '' }} nav-item" >
-        <a class="nav-link" href="#">Pie</a>
+      <li class="{{Str::startsWith(Route::currentRouteName(), 'pie') ? 'active' : '' }} nav-item" >
+        <a class="nav-link" href="/pie">Pie</a>
       </li>
-      <li class="{{Str::startsWith(Route::currentRouteName(), '') ? 'active' : '' }} nav-item" >
-        <a class="nav-link" href="#">Trend</a>
+      <li class="{{Str::startsWith(Route::currentRouteName(), 'trend') ? 'active' : '' }} nav-item" >
+        <a class="nav-link" href="/trend">Trend</a>
       </li>
       <li class="{{Str::startsWith(Route::currentRouteName(), '') ? 'active' : '' }} nav-item" >
         <a class="nav-link" href="#">Bar-total</a>
