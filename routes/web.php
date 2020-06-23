@@ -35,7 +35,9 @@ Route::get('/auto-bar', function () {
 Route::get('/trend', function () {
     return view('component.Trend');
 })->name('trend');
+
 Route::get('/compare/{firstdate}/{seconddate}', 'QrCodeController@comparison')->name('date-comparision');
+Route::get('/items', 'QrCodeController@items')->name('items');
 
 
 

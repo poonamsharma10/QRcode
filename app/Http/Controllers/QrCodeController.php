@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 // use QrCode;
 use SimpleSoftwareIO\QrCode\Generator;
 use App\Qrcode;
+use App\Items;
 use Carbon\Carbon; 
 use Log;
 class QrCodeController extends Controller
@@ -82,9 +83,16 @@ class QrCodeController extends Controller
         $result=['first'=>$firstResult,
         'second'=>$secondResult];
         return response()->json($result);
-        return view('component.Trend', [
-            'data' => json($result)
-        ]);
+        // return view('component.Trend', [
+        //     'data' => json($result)
+        // ]);
   
+    }
+
+    public function items(){
+        $result = Items::all();
+        return response()->json($result);
+
+
     }
 }
