@@ -18,10 +18,10 @@
       <li class="{{Str::startsWith(Route::currentRouteName(), 'trend') ? 'active' : '' }} nav-item" >
         <a class="nav-link" href="/trend">Trend</a>
       </li>
-      <li class="{{Str::startsWith(Route::currentRouteName(), '') ? 'active' : '' }} nav-item" >
-        <a class="nav-link" href="#">Bar-total</a>
+      <li class="{{Str::startsWith(Route::currentRouteName(), 'TagBar') ? 'active' : '' }} nav-item" >
+        <a class="nav-link" href="/tag-bar">Bar-tags</a>
       </li>
-      <li class="{{Str::startsWith(Route::currentRouteName(), '') ? 'active' : '' }} nav-item" >
+      <li class="{{Str::startsWith(Route::currentRouteName(), 'AutoBar') ? 'active' : '' }} nav-item" >
         <a class="nav-link" href="auto-bar">Bar-auto</a>
       </li>
       <li class="{{Str::startsWith(Route::currentRouteName(), 'qrcode') ? 'active' : '' }} nav-item" >

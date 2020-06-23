@@ -30,11 +30,15 @@ Route::get('/pie', function () {
 })->name('pie');
 Route::get('/auto-bar', function () {
     return view('component.AutoBar');
-})->name('Auto-Bar');
+})->name('AutoBar');
 
 Route::get('/trend', function () {
     return view('component.Trend');
 })->name('trend');
+
+Route::get('/tag-bar', function () {
+    return view('component.TagBar');
+})->name('TagBar');
 
 Route::get('/compare/{firstdate}/{seconddate}', 'QrCodeController@comparison')->name('date-comparision');
 Route::get('/items', 'QrCodeController@items')->name('items');
